@@ -2,7 +2,8 @@
 import java.util.ArrayList;
 import java.util.List;
 public class JsonMagic{
-	List<String> lista ;
+	List<String> perros ;
+	List<String> gatos ;
 
 	public JsonMagic(){
 		lista = new ArrayList<String>();
@@ -22,15 +23,34 @@ public class JsonMagic{
 		return params.split(";");
 	}	
 
-	public static void push (String[] params){
-		Stirng s = StringtoJson(params);
-		lista.add(s);	
+	public static void push (Perro param){
+		String[] data = [param.nombre, param.estado, param.cola ? "1" : "0" ];
+		Stirng s = StringtoJson(data);
+		perros.add(s);	
 	}
-	public static String[] pull (String params){
-		Stirng s =  lista.get(lista.size());	
-		lista.remove(lista.size());	
-		return jsontoString(s);
+	public static void push (Gato param){
+		String[] data = [param.nombre, param.estado, param.color ];
+		Stirng s = StringtoJson(data);
+		gatos.add(s);	
 	}
+	public static Gato pullGato (){
+		Stirng s =  gatos.get(gatos.size() -1);	
+		gatos.remove(gatos.size() -1);	
+		String[] d = jsontoString(s);
+		Gato g = Madre.crearGato(d[0],d[2]);
+		g.estado = d[1];
+		return g;
+	}
+	public static Perro pullPerro (){
+		Stirng s =  perros.get(perros.size() -1 );	
+		perros.remove(perros.size() -1 );	
+		String[] d = jsontoString(s);
+		Perro g = Madre.crearPerro(d[0],d[2] == "1" ? true, false);
+		g.estado = d[1];
+		return g;
+	}
+
+
 
 
 }
