@@ -15,11 +15,11 @@ public class Main {
 		System.out.println(p.hablar());
 		System.out.println(g.hablar());
 
-		Vaterinario v = new Veterinario("vet");
+		Veterinario v = new Veterinario("vet");
 		System.out.println(v.curar(g)); //Adapter
 
-		JsonMagic.push(p); //Memento
-		JsonMagic.push(g);
+		JsonMagic.push((Perro)p); //Memento
+		JsonMagic.push((Gato)g);
 
 
 
