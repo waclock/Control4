@@ -9,7 +9,7 @@ public class JsonMagic{
 	}
 
 
-	public static String StringtoJson(String[] params){
+	public static String stringtoJson(String[] params){
 		String var = "";
 		for (String s : params ) {
 			var += s;
@@ -18,14 +18,19 @@ public class JsonMagic{
 		return var;
 	}
 
-	public static String[] JsontoString(String params){
-		String[] var = new String [];
-		for (String s : params.split(";") ) {
-			var += s;
-			var += ";";
-		}
-		return var;
+	public static String[] jsontoString(String params){
+		return params.split(";");
 	}	
+
+	public static void push (String[] params){
+		Stirng s = StringtoJson(params);
+		lista.add(s);	
+	}
+	public static String[] pull (String params){
+		Stirng s =  lista.get(lista.size());	
+		lista.remove(lista.size());	
+		return jsontoString(s);
+	}
 
 
 }
