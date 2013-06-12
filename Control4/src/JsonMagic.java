@@ -2,13 +2,10 @@
 import java.util.ArrayList;
 import java.util.List;
 public class JsonMagic{
-	static List<String> perros ;
-	static List<String> gatos ;
+	static List<String> perros = new ArrayList<String>();
+	static List<String> gatos = new ArrayList<String>();
 
 //Memento
-	public JsonMagic(){
-		lista = new ArrayList<String>();
-	}
 
 
 	public static String stringtoJson(String[] params){
