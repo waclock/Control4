@@ -1,12 +1,15 @@
 
 public class Veterinario {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	String nombre;
+	
+	public Veterinario(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public String curar(Animal animal) {
+		Comunicacion c = new Comunicacion(animal);
+		return c.getEstado();	
 	}
 
 }
