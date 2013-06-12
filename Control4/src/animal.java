@@ -1,3 +1,3 @@
-public class animal{
+public class Animal{
 	
 }
