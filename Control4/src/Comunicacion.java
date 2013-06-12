@@ -7,6 +7,6 @@ public class Comunicacion {
 	}
 	
 	public String getEstado() {
-		return animal.getEstado().reverse();
+		return animal.getEstado().toLowerCase();
 	}
 }
