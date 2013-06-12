@@ -2,10 +2,10 @@
 public  class Madre {
 
 
-	public Gato crearGato(String nombre,String color){
+	public static Gato crearGato(String nombre,String color){
 		return new Gato(nombre,color);
 	}
-	public Perro crearPerro(String nombre){
+	public static Perro crearPerro(String nombre){
 		return new Perro(nombre);
 	}
 

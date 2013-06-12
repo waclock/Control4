@@ -1,6 +1,13 @@
 public class Perro extends Animal{
-	public String nombre;
-	public Perro(String nombre){
+	public boolean cola;
+	public Perro(String nombre, boolean cola){
 		this.nombre=nombre;
+		this.cola=cola;
 	}
+
+	@Override 
+	public String hablar(){
+		return "Guau!";
+	}
+
 }
